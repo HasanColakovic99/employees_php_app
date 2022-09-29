@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0fdcc0623c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="zaposlenik.css" />
+    <link rel="stylesheet" href="./style/zaposlenik.css" />
     <title>Zaposlenik</title>
 </head>
 
@@ -61,7 +61,7 @@
                     <td><?php echo $row['odjel']; ?> </td>
 
                     <?php
-                        if($row['broj_dana_godisnjeg'] === null){
+                        if($row['broj_dana_godisnjeg'] == 0){
                             echo '<td class="nepoznato">Nije definirano</td>';
                         }
                         else {
@@ -72,7 +72,7 @@
                     ?>
 
                     <?php
-                        if($row['broj_slobodnih_dana'] === null){
+                        if($row['broj_slobodnih_dana'] == 0){
                             echo '<td class="nepoznato">Nije definirano</td>';
                         }
                         else {
@@ -83,7 +83,7 @@
                     ?>
 
                     <?php
-                        if($row['broj_dana_placenog_dopusta'] === null){
+                        if($row['broj_dana_placenog_dopusta'] == 0){
                             echo '<td class="nepoznato">Nije definirano</td>';
                         }
                         else {

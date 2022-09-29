@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0fdcc0623c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style/style.css" />
     <title>Zaposlenici</title>
 </head>
 
@@ -22,7 +22,7 @@
     <div class="employees">
         <div class="employees__header">
             <h1>Popis zaposlenika</h1>
-            <a class="new__employee">+ Dodaj zaposlenika</a>
+            <a href="dodavanjeZaposlenika.php" class="new__employee">+ Dodaj zaposlenika</a>
         </div>
 
         <div class="employees__content">
