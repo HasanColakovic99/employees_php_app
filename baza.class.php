@@ -42,30 +42,6 @@ class Baza {
         }
         return $rezultat;
     }
-
-    function updateDB($upit, $skripta = '') {
-        $rezultat = $this->veza->query($upit);
-        if ($this->veza->connect_errno) {
-            echo "Greška kod upita: {$upit} - " . $this->veza->connect_errno . ", " .
-            $this->veza->connect_error;
-            $this->greska = $this->veza->connect_error;
-        } else {
-            if ($skripta != '') {
-                header("Location: $skripta");
-            }
-        }
-
-        return $rezultat;
-    }
-
-    function pogreskaDB() {
-        if ($this->greska != '') {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
 }
 
 ?>

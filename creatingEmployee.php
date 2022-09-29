@@ -2,6 +2,9 @@
 
     require './baza.class.php';
 
+    $veza = new Baza();
+    $veza->spojiDB();
+
     if(isset($_POST['submitBtn'])){
         $ime = $_POST['ime'];
         $prezime = $_POST['prezime'];
@@ -15,9 +18,6 @@
         $broj_dana_godisnjeg = $_POST['broj_dana_godisnjeg'];
         $broj_slobodnih_dana = $_POST['broj_slobodnih_dana'];
         $broj_dana_placenog_dopusta = $_POST['broj_dana_placenog_dopusta'];
-    
-        $veza = new Baza();
-        $veza->spojiDB();
         
         $sql = "INSERT INTO zaposlenik (ime, prezime, slika, spol, godina_rodjenja, pocetak_rada, vrsta_ugovora, trajanje_ugovora, odjel, broj_dana_godisnjeg, broj_slobodnih_dana, broj_dana_placenog_dopusta) VALUES ('$ime', '$prezime', '$url', '$spol', '$datum_rodjenja', '$pocetak_rada', '$vrsta_ugovora', '$trajanje_ugovora', '$odjel', '$broj_dana_godisnjeg', '$broj_slobodnih_dana', '$broj_dana_placenog_dopusta')";
         
@@ -26,11 +26,15 @@
         
         if($rezultat){
             echo '<p class="message success">Uspješno ste dodali novog zaposlenika!</p>';
+            header("Refresh:3");
         }
         else {
             echo '<p class="message error">Došlo je do pogreške, pokušajte ponovo!</p>';
+            header("Refresh:3");
         }
     }
+    
+    $veza->zatvoriDB();
 ?> 
 
 <!DOCTYPE html>
@@ -44,7 +48,7 @@
     <title>Kreiranje zaposlenika</title>
 </head>
 <body>
-    <form method="post" action="dodavanjeZaposlenika.php">
+    <form method="post" action="creatingEmployee.php">
         <div class="container">
             <label for="ime">Ime</label>
             <input type="text" id="ime" name="ime"/>

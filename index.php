@@ -22,7 +22,7 @@
     <div class="employees">
         <div class="employees__header">
             <h1>Popis zaposlenika</h1>
-            <a href="dodavanjeZaposlenika.php" class="new__employee">+ Dodaj zaposlenika</a>
+            <a href="creatingEmployee.php" class="new__employee">+ Dodaj zaposlenika</a>
         </div>
 
         <div class="employees__content">
@@ -31,12 +31,13 @@
                 if (mysqli_num_rows($rezultat) > 0) {
                     while($row = mysqli_fetch_assoc($rezultat)) {
                 ?>
-                <a href="zaposlenik.php?id=<?php echo $row['zaposlenik_id'] ?>"> 
+                <a href="employeeDetails.php?id=<?php echo $row['zaposlenik_id'] ?>"> 
                     <li>
                         <?php echo $row['ime'] . ' ' . $row['prezime'] ?>
-                        <a>
+
+                        <a href="updatingEmployee.php?id=<?php echo $row['zaposlenik_id']?>">
                             <i class="fa-solid fa-pencil"></i>
-                        </a> 
+                        </a>
                     </li>
                 </a>
                 <?php

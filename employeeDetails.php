@@ -6,6 +6,8 @@
     $id = $_GET['id'];
     $sql = "SELECT * FROM zaposlenik WHERE zaposlenik_id='".$id."'";
     $rezultat = $veza->selectDB($sql);
+
+    $veza->zatvoriDB();
 ?>
 
 <!DOCTYPE html>
